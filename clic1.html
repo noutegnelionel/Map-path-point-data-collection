@@ -137,8 +137,7 @@
 				var longitude = this.position.lng();
 				alert(this.position);
 			});  
-			
-		  
+				  
         //Get elevation of Marker
 		  	var elevationService = new google.maps.ElevationService();
     	    var requestElevation = {
@@ -147,35 +146,32 @@
             elevationService.getElevationForLocations(requestElevation, function(results, status) {
 	            if (status == google.maps.ElevationStatus.OK) {
 	                if (results[0]) {    
-									//alert(
-									results[0].elevation+ " mètres";//);		                         	
-					}
+							//alert(
+							results[0].elevation+ " mètres";//);		                         	
+			}
 			    }
 				var filename = "C:\\Users\\bkoua\\Documents\\map\\elevation.csv"; 
-									  var fso = new ActiveXObject('Scripting.FileSystemObject'); 
-									  if (fso.FileExists(filename)) { 
-											var a, ForAppending, streamWrite; 
-											ForAppending = 8; 
-											streamWrite = fso.OpenTextFile(filename, ForAppending, false); 
-											streamWrite.Write(marker.getLabel()+",");
-											streamWrite.Write(results[0].elevation +",");
-											streamWrite.Write(marker.getPosition().lat()+",");
-											streamWrite.WriteLine(marker.getPosition().lng());
-											
-											} 
-									  else { 
-											var streamWrite = fso.CreateTextFile(filename, true); 
-											streamWrite.Write(marker.getLabel()+",");
-											streamWrite.Write(results[0].elevation +",");
-											streamWrite.Write(marker.getPosition().lat()+",");
-											streamWrite.WriteLine(marker.getPosition().lng());
-											} 
+				  var fso = new ActiveXObject('Scripting.FileSystemObject'); 
+				  if (fso.FileExists(filename)) { 
+						var a, ForAppending, streamWrite; 
+						ForAppending = 8; 
+						streamWrite = fso.OpenTextFile(filename, ForAppending, false); 
+						streamWrite.Write(marker.getLabel()+",");
+						streamWrite.Write(results[0].elevation +",");
+						streamWrite.Write(marker.getPosition().lat()+",");
+						streamWrite.WriteLine(marker.getPosition().lng());
+
+						} 
+				  else { 
+						var streamWrite = fso.CreateTextFile(filename, true); 
+						streamWrite.Write(marker.getLabel()+",");
+						streamWrite.Write(results[0].elevation +",");
+						streamWrite.Write(marker.getPosition().lat()+",");
+						streamWrite.WriteLine(marker.getPosition().lng());
+						} 
 																	
-                     			  streamWrite.Close();
-									  
-	        });          
-				 
-			    
+                     			  streamWrite.Close();									  
+	        });          	    
            
 		}
 		// Header of csv file for elevation value

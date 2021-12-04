@@ -4,4 +4,4 @@ In this project, we build a path on a map for a specific search and we get infor
 
 Open the code using the internet explorer browser 
 
-Specify the extraction path of the coordinates of each point
+specify the extraction path for the coordinates of each point

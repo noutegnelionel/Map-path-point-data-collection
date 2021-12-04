@@ -150,7 +150,7 @@
 							results[0].elevation+ " mètres";//);		                         	
 			}
 			    }
-				var filename = "C:\\Users\\bkoua\\Documents\\map\\elevation.csv"; 
+				var filename = "../data_collection.csv"; 
 				  var fso = new ActiveXObject('Scripting.FileSystemObject'); 
 				  if (fso.FileExists(filename)) { 
 						var a, ForAppending, streamWrite; 
@@ -176,7 +176,7 @@
 		}
 		// Header of csv file for elevation value
 			var fso = new ActiveXObject('Scripting.FileSystemObject'); 
-			var s = fso.OpenTextFile("C:\\Users\\bkoua\\Documents\\map\\elevation.csv",  8, true);	
+			var s = fso.OpenTextFile("../data_collection.csv",  8, true);	
 			s.Write("Markers"+",");
 			s.Write("	Elevation(Meters)"+",")	
 			s.Write("Latitude"+",");
@@ -195,7 +195,7 @@
 		        markersArray = [];
 				
 				//var fso = new ActiveXObject('Scripting.FileSystemObject'); 
-				//var s = fso.OpenTextFile("C:\\Users\\bkoua\\Desktop\\elevation.csv",  8, true);	
+				//var s = fso.OpenTextFile("../data_collection.csv",  8, true);	
                     //s.WriteLine("------ ZONE :" +labelIndex2++ % labels2.length);	
                     //s.Close();
 			}
